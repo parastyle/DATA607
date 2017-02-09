@@ -1,0 +1,63 @@
+---
+title: "607-Hw1-Muller"
+author: "Michael Muller"
+date: "February 8, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### Task 1 : Obtain and study the dataset provided on mushrooms.
+```{r}
+#A wrapper for libcurl, provides functions of general HTTP requests
+library(RCurl)
+#Lets fetch a URL
+mushrooms = read.csv(text=getURL('https://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/agaricus-lepiota.data'), header = FALSE, sep = ',')
+```
+Attribute (or column) information is found on the website. First, they classify the mushrooms as either poisonous, edible, or eat at your own risk (Also poisonous.) Then assign 22 variables (columns) to each case. Meaning in total there will be 23 columns starting with whether or not the mushroom is edible.
+
+```{r}
+summary(mushrooms)
+```
+We can see V1 has either E or P...I'm guessing edible or poisonous....V2 has BCFKSX...so does attribute 1 on the website. So I'm going to use their list provided with an offset of -1 per attribute adjusting for E/P column.
+
+### Task 2 : Take the data and create a data frame with a subset of the colulmns.
+
+```{r}
+names(mushrooms) = c('edible','capshape','capsurface','capcolor','bruises','odor','gillattach','gillspace','gillsize','gillcolor','stalkshape','stalkroot','stalksurfaceabovering','stalksurfacebelowring','stalkcolorabovering','stalkcolorbelowring','veiltype','veilcolor','ringnumber','ringtype','sporeprintcolor','population','habitat')
+
+myMushrooms = subset(mushrooms,population=='y',c(edible,veilcolor,veiltype,bruises))
+```
+
+### Task 3 : Change variable values to something more meaningful.
+```{r}
+myMushrooms$edible = as.character(myMushrooms$edible)
+myMushrooms$veilcolor = as.character(myMushrooms$veilcolor)
+myMushrooms$veiltype = as.character((myMushrooms$veiltype))
+myMushrooms$bruises = as.character(myMushrooms$bruises)
+
+myMushrooms$edible[myMushrooms$edible=='e'] = 'edible'
+myMushrooms$edible[myMushrooms$edible=='p'] = 'poisonous'
+
+myMushrooms$veilcolor[myMushrooms$veilcolor=='n'] = 'brown'
+myMushrooms$veilcolor[myMushrooms$veilcolor== 'o'] = 'orange'
+myMushrooms$veilcolor[myMushrooms$veilcolor=='w'] = 'white'
+myMushrooms$veilcolor[myMushrooms$veilcolor=='y'] = 'yellow'
+
+myMushrooms$veiltype[myMushrooms$veiltype=='p'] = 'partial'
+myMushrooms$veiltype[myMushrooms$veiltype=='u'] = 'universal'
+
+myMushrooms$bruises[myMushrooms$bruises=='t'] = 'true'
+myMushrooms$bruises[myMushrooms$bruises=='f'] = 'false'
+
+myMushrooms$edible = as.factor(myMushrooms$edible)
+myMushrooms$veilcolor = as.factor(myMushrooms$veilcolor)
+myMushrooms$veiltype = as.factor((myMushrooms$veiltype))
+myMushrooms$bruises = as.factor(myMushrooms$bruises)
+
+head(myMushrooms)
+tail(myMushrooms)
+dim(myMushrooms)
+```
+
