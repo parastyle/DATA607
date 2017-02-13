@@ -1,0 +1,53 @@
+---
+title: "DATA 607 Homework 2"
+author: "Michael Muller"
+date: "February 12, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(RSQLite)
+```
+
+## Create an SQL db with R
+
+```{r}
+connection = dbConnect(SQLite(), dbname="Movie_ratings.sqlite")
+```
+```{r}
+dbSendQuery(connection, 'CREATE TABLE IF NOT EXISTS Ratings
+(
+NAME TEXT,
+ID INTEGER,
+Matrix INTEGER,
+Fargo INTEGER,
+EternalSunshine INTEGER,
+DrStrangeLove INTEGER,
+LostInSpace INTEGER,
+BackdoorClutsNine INTEGER)'
+)
+```
+```{r}
+dbSendQuery(connection,'INSERT INTO Ratings
+VALUES ("Michaelangelo",1,1,2,3,4,5,1)')
+
+
+dbSendQuery(connection,'INSERT INTO Ratings
+VALUES ("Leonardo",2,5,2,4,3,1,1)')
+
+dbSendQuery(connection,'INSERT INTO Ratings
+VALUES ("Donatello",3,2,1,3,5,4,1)')
+
+dbSendQuery(connection,'INSERT INTO Ratings
+VALUES ("Rapheal",4,5,5,5,5,5,3)')
+
+dbSendQuery(connection,'INSERT INTO Ratings
+VALUES ("THE_SHREDDER",5,1,1,1,1,1,5)')
+```
+
+```{r}
+TheObjectAndyWants = dbGetQuery(connection,'SELECT * FROM Ratings')
+TheObjectAndyWants = data.frame(TheObjectAndyWants)
+TheObjectAndyWants
+```
