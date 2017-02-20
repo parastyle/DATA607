@@ -1,0 +1,128 @@
+---
+title: "DATA607 Hw 3"
+author: "Michael Muller"
+date: "February 19, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Task: Accomplish the following objectives using functions/techniques in chapter 8 of WebScraping in R textbook.
+### Functions/Techniques listed in chapter 8:
+unlist(x) - Produces a vector from a list (x)  
+str_extract(string,pattern) - Returns a substring matching the pattern or NA    
+str_extract_all(string, pattern) - Returns all substrings matching the pattern or NA  
+str_locate() Returns a position of first patterned matched  
+str_locate_all() Returns positions of all pattern matches (a list of matrices)   
+str_replace / all () Replaces pattern matches  
+str_split() - Splits a string at pattern  
+str_split_fixed() Splits string at pattern into fixed number of peices  
+str_detect() - detects patterns in string  
+str_count() - Counts number of pattern occurrences in string  
+
+
+### First we load the raw data, extract names and phone numbers into a data frame.
+```{R}
+library(stringr)
+raw.data = c("555-1239Moe Szyslak(636) 555-0113Burns, C. Montgomery555-6542Rev. Timothy Lovejoy555 8904Ned Flanders636-555-3226Simpson, Homer5553642Dr. Julius Hibbert")
+names = unlist(str_extract_all(raw.data, "[[:alpha:]., ]{2,}")) 
+phones = unlist(str_extract_all(raw.data, "\\(?(\\d{3,})?\\)?(-| )?\\d{3,}(-| )?\\d{1,}")) 
+myData = data.frame(name = names,phone = phones)
+myData
+```
+
+
+### Objective 1, rearrange name vector to always present first_name, last_name
+
+
+```{r}
+objective1 = function(x){
+  if (str_detect(x,",")){
+  str = str_split(x,", ")
+  str=paste(str[[1]][2],str[[1]][1], sep= " ")
+  return(str)
+  }
+  else if (str_detect(x,"[:alpha:]")){
+    return(str_extract(x,".*"))
+  }
+}
+myVector = sapply(myData$name,objective1)
+myVector
+```
+
+### Objective 2, Construct vector indicating whether a character has a title
+
+```{r}
+objective2 = function(y){
+  return (str_detect(y,"[:upper:]{1}[:alpha:]+\\."))
+}
+cbind(eX = sapply(myVector,objective2))
+
+```
+
+### Objective 3, construct a vector indicating whether a character has a second name
+I'm not sure what "second name" means...surname? A middle name? They all have two names, one has three.
+```{R}
+#This function checks to see if they have a middle name, by looking for an initial
+objective3 = function(z){
+  return (str_detect(z,"[:upper:]\\."))
+}
+
+cbind(resultVector = sapply(myVector,objective3))
+cat ('\n\n')
+#This function just tells us how many names they have, by removing their titles and counting white space
+objective3.5 = function(L){
+  howManyWords = str_replace(L,"[:upper:]{1}[:alpha:]+\\. ","")
+  howManyWords = str_split(howManyWords," ")
+  return(paste("Has",length(howManyWords[[1]]),  'names'))
+               }
+
+
+cbind(resultVector=sapply(myVector,objective3.5))
+```
+
+
+## Describe the types of strings that conform to the following regular expressions and construct an example that is matched by the regular expression.
+
+###(a) [0-9]+\\\\$  
+[0-9]+ also expressed as [:digit:]+ means 1 or more digits 0 through 9.  \\\\ means literal, so \\\\$ looks for a dollar sign at the end....Example is 9999$  
+
+###(b) \\\\b[a-z]{1,4}\\\\b  
+\\\\b's are alphanumeric wrappers, [a-z] is also [:lower:] and {1,4} means at least one, no more than 4. This REGEX is used to find lower case words with less than 5 characters and more than 0.  
+Examples shed, boob, to, a.
+  
+###(c) .*?\\\\.txt$  
+
+"." is a qualitative wildcard, '*' is a quantitative wildcard, ? Means the REGEX will be greedy, \\\\. means literally ".", txt$ means end with "txt"...This REGEX is used to identify text files by file name. I would use this after maybe a files = os.listdir() function in python. It would find things like "lazyDog.txt"
+
+###(d) \\\\d{2}/\\\\d{2}/\\\\d{4}  
+
+\\\\d{2} means find 2 digits / is just a forward slash...This means find 2 digits, forward slash, 2 digits, forward slash, 4 digits. Practical use, finding dates listed either mm/dd/yyyy or dd/mm/yyyy.  
+
+
+###(e) <(.+?)>.+?</\\\\1>  
+
+Anything in the () can be called later in a REGEX by backreferencing with \\\\[:digit:]. ".+?" means get at least one, of as much as you can, of anything. This would get something like '< abc >Jojo</ abc>'. Its used for HTML and CSS since that stuff is written with '<></>'. The only catch is that backreferencing wants an EXACT copy. 
+
+
+## Extra Credit time
+Lets start this off with a bunch of functions, check their output
+```{r}
+SecretCode = c('clcopCow1zmstc0d87wnkig7OvdicpNuggvhryn92Gjuwczi8hqrfpRxs5Aj5dwpn0Tanwo Uwisdij7Lj8kpf03AT5Idr3coc0bt7yczjatOaootj55t3Nj3ne6c4Sfek.r1w1YwwojigO d6vrfUrbz2.2bkAnbhzgv4R9i05zEcrop.wAgnb.SqoU65fPa1otfb7wEm24k6t3sR9zqe5 fy89n6Nd5t9kc4fE905gmc4Rgxo5nhDk!gr')
+str_extract_all(SecretCode,'[:upper:]+')
+str_extract_all(SecretCode,'[:upper:][:lower:]{1,5}')
+str_extract_all(SecretCode,'[:lower:]*')
+str_replace_all(SecretCode,'[:digit:]*',"")
+str_replace_all(SecretCode,'[:alpha:]*',"")
+```
+
+Hmm,First check hit the jackpot, last check ends with an exclamation point, I'll be taking that. The periods seem useful maybe? 
+```{r}
+clue = (str_extract_all(SecretCode,'[:upper:]|\\.|!'))
+clue <- append(clue[[1]],".",after=31)
+clue = paste(clue,collapse = '.')
+clue
+```
+I take offense.
