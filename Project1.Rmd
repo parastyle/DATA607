@@ -1,0 +1,110 @@
+---
+title: "DATA607 - Project 1"
+author: "Michael Muller"
+date: "February 23, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Project 1 - Create an optimal data set from an in-optimal text file, full of data.  
+
+
+#### So right away the read.table function comes to mind, but I would like to see if I can do the initial parsing manually.
+```{r}
+library(stringr)
+#open text file
+text = file('C:/Users/Exped/Desktop/tournamentinfo.txt')
+#read lines into object
+tournamentFile = readLines(con=text)
+#seperate the object into different lines
+tournyVector = unlist(tournamentFile, recursive = TRUE, use.names = TRUE)
+#next three lines are just removing unneccessary lines from the object
+remove = tournyVector[seq(1, length(tournyVector),3)]
+tournyVector = tournyVector[! tournyVector %in% remove]
+tournyVector = tournyVector[3:length(tournyVector)]
+# Heres the object
+summary(tournyVector)
+head(tournyVector)
+```
+#### Now I have a big list of complementary lines, so I seperate them.
+```{r}
+nameRow = (tournyVector[seq(1, length(tournyVector),2)])
+detailsRow= (tournyVector[seq(2, length(tournyVector),2)])
+```
+
+
+#### Here I make some extract functions
+```{r}
+
+#Made some individual functions to extract what I need from the rows containing names
+extractName_nameRow = function(nameRow){
+  name = c(trimws(substr(nameRow, start = 8, stop = 40), which =c('right')))
+  return(name)}
+
+extractPoints_nameRow = function(nameRow){
+  points = c(lapply(trimws(substr(nameRow, start = 42, stop = 44), which =c('right')),as.numeric))
+  return(points)}
+#bunch of nested functions there...but basically I take a portion of the line, trim its white space, and treat it as a numeric.
+extractRoundsOpp_nameRow = function(nameRow){
+  step1 = trimws(substr(nameRow, start = 46, stop = 90), which =c('right'))
+  step1 = str_replace_all(step1,'    ', '00')
+  who = c(lapply((str_extract_all(step1,'[:digit:]{1,2}')),as.numeric))
+  return(who)
+}
+
+```
+
+```{r}
+#Same thing, only for the row with extra details
+extractState_detailsRow = function(detailsRow){
+  state = c(trimws(substr(detailsRow, start = 4, stop = 5), which =c('right')))
+  return(state)}
+
+extractPreELO_detailsRow = function(detailsRow){
+  preELO = c(lapply(trimws(substr(detailsRow, start=23, stop = 26), which =c('left')),as.numeric))
+  return(preELO)
+}
+```
+#### I use the extract functions
+```{r}
+#I use the functions here
+names = extractName_nameRow(nameRow)
+points = unlist((extractPoints_nameRow(nameRow)))
+states = unlist(extractState_detailsRow(detailsRow))
+preElo = unlist(extractPreELO_detailsRow(detailsRow))
+oppVector = (extractRoundsOpp_nameRow(nameRow))
+# Make a dataframe of what we have so far  
+sufficientData= data.frame(names,points, states, preElo)
+```
+
+
+#### This loop averages the opponent Pre chess elo of each contender and appends it to the DF
+```{r}
+# For loops should generally be avoided in R, nested for loops especially. I originally did this with lapply function, but I thought this loop would be easier to read. 
+averageOpponent = c()
+playerCount = 1
+for(player in oppVector){
+  totalOpponentElo = 0
+  count = 0
+  for(opponent in player){
+    if(opponent!=0){
+    totalOpponentElo = totalOpponentElo + sufficientData$preElo[opponent]
+    count = count + 1
+    }
+    else{}
+  }
+  averageOpponent[playerCount] = totalOpponentElo/count
+  playerCount = playerCount+1
+}
+sufficientData$averageOpponentElo = averageOpponent
+```
+```{r}
+sufficientData = setNames(sufficientData,c('Name','Pts','State','PrElo','OpPreAvgELO'))
+summary(sufficientData$OpPreAvgELO)
+```
+
+```{r}
+write.csv(sufficientData,file = 'C:/Users/Exped/Desktop/chessAverages')
+```
