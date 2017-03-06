@@ -1,0 +1,78 @@
+---
+title: "DATA 607 Hw 5 - Tidy Data"
+author: "Michael Muller"
+date: "March 5, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr)
+library(magrittr)
+library(ggplot2)
+library(gridExtra)
+```
+This homework uses dplyr, gridExtra, ggplot2 and tidyr not included in code.
+```{r}
+flights <- read.csv("C:/Users/Exped/Desktop/Textbooks/607 Homeworks/Completed607/flights.csv") 
+flights
+flights = flights[!is.na(flights$Los.Angeles),]
+names(flights)[1:2] = c("Airline","Arrival")
+flights
+```
+
+
+If there were more than 4 rows, I Would use the seq() method to fill in the table. (Provided there was an innate order to the flights data.)
+```{r}
+flights$Airline[2] = 'ALASKA'
+flights$Airline[4] = 'AMWEST'
+```
+
+The next two lines of code, we use Tidyr to gather all the individual city columns between columns 2 and 8
+Once we have that, we continue to tidy the dataframe by spreading the data so that The Arrival column, becomes less redundant by turning its complementary values into their own columns, while eliminating the Arrival column.
+```{r}
+flights = gather(flights,"City","Freq",3:7)
+flights = spread(flights,Arrival,Freq)
+```
+
+```{r}
+flights = mutate(flights, 
+          total = delayed + `on time`)
+flights = mutate(flights,
+          delay = round(100*delayed/(`on time` + delayed),2))
+
+flights
+```
+
+```{r}
+avgDelayALASKA = mean(select(flights,delay)[[1]][1:5])
+avgDelayAMWEST = mean(select(flights,delay)[[1]][6:10])  
+  
+avgDelayALASKA # Average of probability of delayed flights per city (ALASKA airlines)
+
+avgDelayAMWEST # Average of probability of delayed flights per city (AMWEST airlines)
+```
+The numbers above imply that if ALASKA airlines were to host flights to other cities, we could expect less delayed flights than if AMWEST were to host the same flights. If we look at the data from some ggplots, we'll see that AMWEST has more delays in every city, and conducts a majority of their flights from Phoenix. Interesting to note in regards to AMWEST, that as the number of flights per city decrease, the ratio of delayed flights increase.  
+
+```{R}
+figure1 =ggplot(flights, aes(x = Airline, y=delay/100, fill = City)) +  
+          geom_bar(stat="identity",position="dodge") + 
+          xlab("Airlines") + ylab("Average probability of delay") 
+
+figure2 = ggplot(flights, aes(x = Airline, y=total, fill = City)) +
+          geom_bar(stat="identity",position="dodge") +
+          xlab("Airlines") + ylab("Amount of flights") 
+grid.arrange(figure1,figure2,ncol=2)
+```
+
+
+Next we demonstrate some piping (not TOO good at yet, getting then hang of it), and we get the average probability of delay per airline. This is a better approach than the average of individual probabilities because it accounts for the variance in number of city flights.
+```{r}
+summarisedData = flights %>% group_by(Airline) %>% summarise(totalDelayed = sum(delayed), totalOntime = sum(`total`), avgDelay = totalDelayed/totalOntime*100)  
+summarisedData
+
+```
+  
+  
+From here, we see that the above statement is not wrong, but does not give us an accurate account to the majority of all flights per airline; because AMWEST hosts a majority of their flights from Phoenix, and there are fewer delays in Phoenix for AMWEST, the actual probability of a delay for a randomly selected flight from AMWEST is actually lower than ALASKA airlines which did show us less probability for delays specific for a newly acquired destination (city.)
