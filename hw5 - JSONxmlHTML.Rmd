@@ -5,6 +5,7 @@ date: "March 19, 2017"
 output: html_document
 ---
 
+http://rpubs.com/abyscious/DATA60705   <<< R pubs publication
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
