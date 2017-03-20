@@ -1,0 +1,34 @@
+---
+title: "DATA 607 Homework 5"
+author: "Michael Muller"
+date: "March 19, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(jsonlite)
+library(XML)
+library(RCurl)
+```
+
+```{r}
+jsonTable = data.frame(fromJSON('https://raw.githubusercontent.com/parastyle/DATA607/master/books.json'))
+jsonTable
+xmlTable = data.frame(xmlToDataFrame(getURL('https://raw.githubusercontent.com/parastyle/DATA607/master/books.xml')))
+xmlTable
+htmlTable = data.frame(readHTMLTable(getURL('https://raw.githubusercontent.com/parastyle/DATA607/master/books.html'),header=TRUE,which=1))
+htmlTable
+
+```
+
+```{r}
+xmlComparedToJson = xmlTable == jsonTable
+xmlComparedToJson
+xmlComparedToHTML = xmlTable == htmlTable
+xmlComparedToHTML
+```
+
+if XML = JSON, and XML = HMTL, then HTML = JSON.
+
+### Data frames are identical.
