@@ -1,0 +1,29 @@
+{
+	"book_table" :{
+	"book":
+		[
+			{
+	"Title":"Computer Power and Human Reason",
+	"Author":"Joseph Weizenbaum",
+	"Brief":"Definitive integration of technological and humanistic thought",
+	"ISBN":"0-7167-0463-3",
+	"Pages":"280"
+	},
+	{
+	"Title":"Optimization and Computational Logic",
+	"Author":"Ken McAloon",
+	"Brief":"Merges discrete and continuous problem solving methods",
+	"ISBN":"0-471-11533-9",
+	"Pages":"520"
+	},
+	{
+	"Title":"From standard logic to logic programming",
+	"Author":"A. Thayse",
+	"Brief":"Introducing a logic based apporach to artificial intelligence",
+	"ISBN":"0-471-91838-5",
+	"Pages":"335"
+	}
+]
+	
+	}
+}
