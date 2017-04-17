@@ -1,0 +1,165 @@
+---
+title: "DATA 607 Project 4 / Sentiment Analysis"
+author: "Michael Muller"
+date: "April 6, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stringr)
+library(XML)
+library(RCurl)
+library(RSQLite)
+library(tm)
+library(tidytext)
+library(knitr)
+```
+
+
+### Task : Use spam and non-spam (ham) emails to classify other spam and ham emails.
+#### Step 1 : Parse HTML for download links, download, and unzip
+#### Step 2 : Remove metadata from emails, spam and ham. 
+#### Step 3 : Create term document matrices
+#### Step 4 : Filter individual emails using TDMs to determine if spam or ham
+#### Step 5 : Report findings
+```{r}
+options(warn=-1)
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
+                      echo=FALSE, warning=FALSE, message=FALSE)
+
+if(!file.exists('data4Project')){
+dir.create('data4Project')
+setwd('data4Project')
+data4Project = 'http://spamassassin.apache.org/old/publiccorpus/'
+download.file(data4Project,'allTheData.txt')
+allTheData = lapply('allTheData.txt',htmlParse)
+
+#All the data is the HTML for the page, which technically has LINKS to all the data, lets get those links
+
+#the following a modified function from webscraping with R textbook. Made it iterative~ Cntrl + F "extractReviewLinks" in the textbook
+getTheLinksIWant = function(x,y){
+  x <- xpathApply(x, "//td/a/@href", 
+                  as.character)[[y]] 
+  if(length(x) == 0) x <- NA 
+  if(str_detect(x, "old") & !is.na(x)) x <- NA 
+  names(x) <- NULL
+  x
+}
+
+# This snippet, finds our links, downloads the files, and unzips them
+theLinksThatIWant = c(3:10)
+for(y in theLinksThatIWant){
+  theLinksThatIWant[y] = unlist(lapply(allTheData,getTheLinksIWant,y))
+  temp = paste(data4Project,theLinksThatIWant[y],sep = '')
+  download.file(temp,theLinksThatIWant[y])
+  untar(bzfile(theLinksThatIWant[y],'rb'))
+}}
+
+
+# These lines of code will seperate the files we just made, into ham and spam.
+setwd('data4Project')
+spamHamFiles = list.files(getwd())
+spamHamFiles = spamHamFiles[str_detect(spamHamFiles,'.tar')==FALSE&str_detect(spamHamFiles,'.txt')==FALSE]
+allSpam = spamHamFiles[str_detect(spamHamFiles,'spam')]
+allHam = spamHamFiles[str_detect(spamHamFiles,'ham')]
+
+#Get rid of icky unix command files function
+removeCmds = function(L){
+  for (M in length(L)){
+    file.remove(paste(L[M],'/cmds',sep=''))
+  }
+}
+
+# Lets take a sample of ham, and a sample of spam.
+# I like this, because everytime you run my code, you'll have different training sets and test sets.
+ham = file.path(getwd(),sample(allHam,2,replace=FALSE))
+spam = file.path(getwd(),sample(allSpam,2,replace = FALSE))
+removeCmds(spam)
+removeCmds(ham)
+
+#This is the non-spam and spam directories we'll be using for training
+ham[1]
+spam[1]
+#This is the non-spam directory we'll test
+ham[2]
+
+
+#Machine learning for hackers (oreilly) / This function will get the actual message from our emails, because they all start after the first newline.
+juicyText = function(theFile) {
+ con = file(theFile, open="rt", encoding="latin1")
+ text = readLines(con)
+ msg = text[seq(which(text=="")[1]+1,length(text),1)]
+ close(con)
+ return(paste(msg, collapse="\\n"))
+}
+
+#trainingSpam = dir(spam[1])
+
+
+#These three functions rely heavily again, on Machine learning for hackers...It will create our training sets as DOCUMENT TERM MATRICES 
+createTraining = function(hamOrSpam){
+  trainingDocs = dir(hamOrSpam)
+  filteredDocs = sapply(trainingDocs,function(Z) juicyText(paste(hamOrSpam,Z,sep="/")))
+  trainingCorpus = Corpus(VectorSource(filteredDocs))
+  control = list(stopwords=TRUE, removePunctuation=TRUE,removeNumbers=TRUE,minDocFreq=2)
+  trainingDTM = TermDocumentMatrix(trainingCorpus,control)
+  return(trainingDTM)
+}
+#This will create TDMs for individual emails
+individualTDM = function(hamOrSpam){
+  documentCorpus = Corpus(VectorSource(hamOrSpam))
+  control = list(stopwords=TRUE, removePunctuation=TRUE,removeNumbers=TRUE,minDocFreq=2)
+  documentTDM = TermDocumentMatrix(documentCorpus,control)
+  return(documentTDM)
+  
+}
+# This function will transform the term document matrices into dataframes that we can more easily manipulate. While putting in a frequency . 
+# I'm not actually using the entirety of the dataframe this makes, but it certainely helped me understand what I'm looking at.
+convertMatrix = function(trainingTDM){
+  tempMatrix = as.matrix(trainingTDM)
+  tempCounts = rowSums(tempMatrix)
+  tempDF = data.frame(cbind(names(tempCounts), as.numeric(tempCounts)), stringsAsFactors = FALSE)
+  names(tempDF) = c('term','frequency')
+  tempDF$frequency = as.numeric(tempDF$frequency)
+  tempOccurence = sapply(1:nrow(tempMatrix),
+                         function(o){length(which(tempMatrix[o,]>0))/ncol(tempMatrix)})
+  tempDensity = tempDF$frequency/sum(tempDF$frequency)
+  tempDF = transform(tempDF,density=tempDensity,occurrence=tempOccurence)
+  return(tempDF)
+}
+spamTDM1 = createTraining(spam[1])
+hamTDM1 = createTraining(ham[1])
+hamTrainingMatrix = convertMatrix(hamTDM1)
+spamTrainingMatrix = convertMatrix(spamTDM1)
+
+
+head(spamTrainingMatrix[with(spamTrainingMatrix, order(-occurrence)),])
+head(hamTrainingMatrix[with(hamTrainingMatrix, order(-occurrence)),])
+
+
+
+myClassifier = function(individualFile, trainingMatrixHam,trainingMatrixSpam){
+  msg = juicyText(individualFile)
+  msg.tdm = individualTDM(msg)
+  msg.freq = rowSums(as.matrix(msg.tdm))
+  # Now we look for words that come across
+  msg.matchSpam = intersect(names(msg.freq),trainingMatrixSpam$term)
+  msg.matchHam = intersect(names(msg.freq),trainingMatrixHam$term)
+  return(ifelse(length(msg.matchHam)>length(msg.matchSpam),TRUE,FALSE))
+}
+#joe = classifier(paste(ham[2],randomHamTestEmails[1],sep="/"),trainingMatrix=spamTrainingMatrix)
+## Occurrence is % chance in which term occurs in document
+randomHamTestEmails = dir(ham[2])
+randomHamTestEmailsTest = sapply(randomHamTestEmails,function(Z) myClassifier(paste(ham[2],Z,sep="/"), trainingMatrixHam=hamTrainingMatrix,trainingMatrixSpam = spamTrainingMatrix))
+howManyGuessedCorrectly = length(randomHamTestEmailsTest[randomHamTestEmailsTest==TRUE])
+howManyGuessedIncorrectly = length(randomHamTestEmailsTest[randomHamTestEmailsTest==FALSE])
+
+accuracy = howManyGuessedCorrectly/(howManyGuessedCorrectly+howManyGuessedIncorrectly)
+```
+
+Thank you webscraping in R, and Machine Learning for hackers. My document classifer reached `r accuracy*100` % accuracy < This varies everytime I click knit (Variate test and training sets)
+
+
+
+
