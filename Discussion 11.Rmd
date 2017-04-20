@@ -1,0 +1,38 @@
+---
+title: "DATA 607 - Recommender System Evaluation"
+author: "Michael Muller"
+date: "April 20, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Discussion 11 :  
+## Data 607 :
+
+### Netflix recommender system reformation review
+
+#### This is the article I've chosen to help me with my review of Netflixs recommendation.
+https://www.quora.com/Why-is-Netflix-replacing-its-star-ratings-with-a-thumbs-up-and-thumbs-down-system-2017  
+This article mentions something called A/B testing, if anyone wants to read what that is, seems pretty business-meta.  
+https://www.optimizely.com/ab-testing/  
+(A/B testing differs from recommender systems, as it takes causal data from a controlled experiment to apply to a bigger group of people, where as recommender systems often have individual calculations for individual people, in which the recommendations are made from a script, not the jurisprudence of data analysts.)  
+
+### Scenario Design analysis : Should the recommender system perform scenario design twice? Once for organization, twice for consumer.  
+a: Target user : Everyone subscribed to netflix; and uses the service.  
+b: Key goals : To provide a base level of gauranteed entertainment to their home or phone.  
+c: How does netflix help them accomplish their goals? : Relevant film selections to users taste.  
+d : Does it make sense to perform scenario design twice? : Yes, it would be useful for Netflix to first classify viewers into cultural / bias groups, before using their specific recommender system on an individual. (e.g. American tween culture : Will watch transformers and marvel movies, use that to some advantage over thumb up thumb down.)  
+
+
+### Reverse engineer recommender system.  
+Netflix recommender system uses a series of filters to find recommended movies.  In the article above, their designer Bertrand Toublet talks about other factors other than tags being considered, much like how NYtimes recommender system needed to update their algorithim from a simple tag / vocab based approach to classify articles and consumers.  
+The star rating system has been defunct because of too many confounding variables; stars and reviews carried less weight because of this. One thing they use to recommend vidoes to you now, is the path you take viewing their library. (Whys this important?) Probably because with their now, new and improved "thumb up/down" rating,they have concrete answers "yes or no" which carry vastly more weight than an arbitrary star rating system. With approval vs dissaproval they can now better analyze your path through their library using the Mean Average Precision (MAP) algorithim, combined with an emulated Discounted Cumulative Gain algorithim that they can emulate using their vast, past 5 star movie rating system.  
+In conclusion I believe netflix recommender system creates a training set using a combination of MAP and DCG algorithims from current and past data, which they test on experimental focus groups (they definitely have enough money and interest to do this.)
+
+### Specific recommendations about how to improve the site's recommendation capabilities going forward.  
+My answer is contingent on this article being relevant (http://www.theverge.com/2016/2/17/11030200/netflix-new-recommendation-system-global-regional):  
+With netflix's recent changes in recommender systems. (Switching geographic restrictions and star rating to thumb rating systems) They now have stronger data on their entire library. These two changes have given them stronger geographical /density data, however they have not shown any interest in time. It is known de facto through time that relevant and popular "art" rides a wave contingent on what other art is being produced. Movies are art as well. I believe that certain tags that are no doubt being used in their recommender system should lose and gain power index over time, according to similar tags which have fallen out of relevance. This is my recommendation/suggestion for improvement.   
+
