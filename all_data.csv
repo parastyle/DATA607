@@ -1,0 +1,570 @@
+"";"Description";"Country";"SkillDescription";"Description";"Amount";"Rating"
+"1";"Austin, Texas";"US";"bash";"program_languages";6;0,0387097
+"2";"Austin, Texas";"US";"c++";"program_languages";24;0,154839
+"3";"Austin, Texas";"US";"cassandra";"databases";2;0,0129032
+"4";"Austin, Texas";"US";"d3";"analysis_software";4;0,0258065
+"5";"Austin, Texas";"US";"excel";"analysis_software";29;0,187097
+"6";"Austin, Texas";"US";"flume";"bigdata_tool";1;0,00645161
+"7";"Austin, Texas";"US";"hadoop";"bigdata_tool";41;0,264516
+"8";"Austin, Texas";"US";"hbase";"databases";4;0,0258065
+"9";"Austin, Texas";"US";"hive";"bigdata_tool";8;0,0516129
+"10";"Austin, Texas";"US";"java";"program_languages";43;0,277419
+"11";"Austin, Texas";"US";"javascript";"program_languages";26;0,167742
+"12";"Austin, Texas";"US";"matlab";"program_languages";16;0,103226
+"13";"Austin, Texas";"US";"nosql";"databases";3;0,0193548
+"14";"Austin, Texas";"US";"numpy";"analysis_software";2;0,0129032
+"15";"Austin, Texas";"US";"oozie";"bigdata_tool";1;0,00645161
+"16";"Austin, Texas";"US";"pandas";"analysis_software";17;0,109677
+"17";"Austin, Texas";"US";"perl";"program_languages";3;0,0193548
+"18";"Austin, Texas";"US";"pig";"bigdata_tool";17;0,109677
+"19";"Austin, Texas";"US";"python";"program_languages";74;0,477419
+"20";"Austin, Texas";"US";"r";"program_languages";59;0,380645
+"21";"Austin, Texas";"US";"rdbms";"databases";1;0,00645161
+"22";"Austin, Texas";"US";"ruby";"program_languages";2;0,0129032
+"23";"Austin, Texas";"US";"sas";"analysis_software";8;0,0516129
+"24";"Austin, Texas";"US";"scala";"program_languages";35;0,225806
+"25";"Austin, Texas";"US";"spark";"bigdata_tool";41;0,264516
+"26";"Austin, Texas";"US";"sql";"databases";50;0,322581
+"27";"Austin, Texas";"US";"tableau";"analysis_software";22;0,141935
+"28";"Chicago, Illinois";"US";"c++";"program_languages";7;0,0463576
+"29";"Chicago, Illinois";"US";"cassandra";"databases";3;0,0198676
+"30";"Chicago, Illinois";"US";"d3";"analysis_software";11;0,0728477
+"31";"Chicago, Illinois";"US";"excel";"analysis_software";31;0,205298
+"32";"Chicago, Illinois";"US";"hadoop";"bigdata_tool";25;0,165563
+"33";"Chicago, Illinois";"US";"hbase";"databases";6;0,0397351
+"34";"Chicago, Illinois";"US";"hive";"bigdata_tool";11;0,0728477
+"35";"Chicago, Illinois";"US";"java";"program_languages";26;0,172185
+"36";"Chicago, Illinois";"US";"javascript";"program_languages";2;0,013245
+"37";"Chicago, Illinois";"US";"matlab";"program_languages";23;0,152318
+"38";"Chicago, Illinois";"US";"numpy";"analysis_software";3;0,0198676
+"39";"Chicago, Illinois";"US";"pandas";"analysis_software";4;0,0264901
+"40";"Chicago, Illinois";"US";"perl";"program_languages";7;0,0463576
+"41";"Chicago, Illinois";"US";"pig";"bigdata_tool";2;0,013245
+"42";"Chicago, Illinois";"US";"python";"program_languages";83;0,549669
+"43";"Chicago, Illinois";"US";"r";"program_languages";85;0,562914
+"44";"Chicago, Illinois";"US";"ruby";"program_languages";1;0,00662252
+"45";"Chicago, Illinois";"US";"sas";"analysis_software";50;0,331126
+"46";"Chicago, Illinois";"US";"scala";"program_languages";13;0,0860927
+"47";"Chicago, Illinois";"US";"spark";"bigdata_tool";21;0,139073
+"48";"Chicago, Illinois";"US";"spotfire";"analysis_software";12;0,0794702
+"49";"Chicago, Illinois";"US";"spss";"analysis_software";7;0,0463576
+"50";"Chicago, Illinois";"US";"sql";"databases";72;0,476821
+"51";"Chicago, Illinois";"US";"tableau";"analysis_software";26;0,172185
+"52";"Detroit, Michigan";"US";"bash";"program_languages";2;0,0133333
+"53";"Detroit, Michigan";"US";"c++";"program_languages";23;0,153333
+"54";"Detroit, Michigan";"US";"d3";"analysis_software";10;0,0666667
+"55";"Detroit, Michigan";"US";"excel";"analysis_software";36;0,24
+"56";"Detroit, Michigan";"US";"flume";"bigdata_tool";2;0,0133333
+"57";"Detroit, Michigan";"US";"hadoop";"bigdata_tool";45;0,3
+"58";"Detroit, Michigan";"US";"hive";"bigdata_tool";24;0,16
+"59";"Detroit, Michigan";"US";"java";"program_languages";38;0,253333
+"60";"Detroit, Michigan";"US";"javascript";"program_languages";13;0,0866667
+"61";"Detroit, Michigan";"US";"mahout";"bigdata_tool";12;0,08
+"62";"Detroit, Michigan";"US";"matlab";"program_languages";24;0,16
+"63";"Detroit, Michigan";"US";"mssql";"databases";10;0,0666667
+"64";"Detroit, Michigan";"US";"pandas";"analysis_software";1;0,00666667
+"65";"Detroit, Michigan";"US";"perl";"program_languages";2;0,0133333
+"66";"Detroit, Michigan";"US";"pig";"bigdata_tool";17;0,113333
+"67";"Detroit, Michigan";"US";"powerpoint";"analysis_software";2;0,0133333
+"68";"Detroit, Michigan";"US";"python";"program_languages";52;0,346667
+"69";"Detroit, Michigan";"US";"r";"program_languages";58;0,386667
+"70";"Detroit, Michigan";"US";"rdbms";"databases";3;0,02
+"71";"Detroit, Michigan";"US";"ruby";"program_languages";12;0,08
+"72";"Detroit, Michigan";"US";"sas";"analysis_software";38;0,253333
+"73";"Detroit, Michigan";"US";"scala";"program_languages";28;0,186667
+"74";"Detroit, Michigan";"US";"shark";"bigdata_tool";18;0,12
+"75";"Detroit, Michigan";"US";"spark";"bigdata_tool";49;0,326667
+"76";"Detroit, Michigan";"US";"splunk";"analysis_software";1;0,00666667
+"77";"Detroit, Michigan";"US";"spss";"analysis_software";13;0,0866667
+"78";"Detroit, Michigan";"US";"sql";"databases";61;0,406667
+"79";"Detroit, Michigan";"US";"tableau";"analysis_software";48;0,32
+"80";"N/A";"England";"c++";"program_languages";16;0,153846
+"81";"N/A";"England";"cassandra";"databases";1;0,00961538
+"82";"N/A";"England";"d3";"analysis_software";6;0,0576923
+"83";"N/A";"England";"excel";"analysis_software";7;0,0673077
+"84";"N/A";"England";"hadoop";"bigdata_tool";14;0,134615
+"85";"N/A";"England";"hbase";"databases";2;0,0192308
+"86";"N/A";"England";"hive";"bigdata_tool";6;0,0576923
+"87";"N/A";"England";"java";"program_languages";22;0,211538
+"88";"N/A";"England";"javascript";"program_languages";6;0,0576923
+"89";"N/A";"England";"matlab";"program_languages";9;0,0865385
+"90";"N/A";"England";"mysql";"databases";1;0,00961538
+"91";"N/A";"England";"numpy";"analysis_software";4;0,0384615
+"92";"N/A";"England";"pandas";"analysis_software";4;0,0384615
+"93";"N/A";"England";"perl";"program_languages";2;0,0192308
+"94";"N/A";"England";"php";"program_languages";2;0,0192308
+"95";"N/A";"England";"powerpoint";"analysis_software";1;0,00961538
+"96";"N/A";"England";"python";"program_languages";50;0,480769
+"97";"N/A";"England";"r";"program_languages";45;0,432692
+"98";"N/A";"England";"rdbms";"databases";1;0,00961538
+"99";"N/A";"England";"ruby";"program_languages";1;0,00961538
+"100";"N/A";"England";"sas";"analysis_software";13;0,125
+"101";"N/A";"England";"scala";"program_languages";11;0,105769
+"102";"N/A";"England";"scipy";"analysis_software";1;0,00961538
+"103";"N/A";"England";"spark";"bigdata_tool";15;0,144231
+"104";"N/A";"England";"spotfire";"analysis_software";1;0,00961538
+"105";"N/A";"England";"spss";"analysis_software";5;0,0480769
+"106";"N/A";"England";"sql";"databases";36;0,346154
+"107";"N/A";"England";"tableau";"analysis_software";11;0,105769
+"108";"N/A";"Germany";"c++";"program_languages";7;0,0673077
+"109";"N/A";"Germany";"cassandra";"databases";3;0,0288462
+"110";"N/A";"Germany";"excel";"analysis_software";6;0,0576923
+"111";"N/A";"Germany";"hadoop";"bigdata_tool";29;0,278846
+"112";"N/A";"Germany";"hive";"bigdata_tool";6;0,0576923
+"113";"N/A";"Germany";"java";"program_languages";36;0,346154
+"114";"N/A";"Germany";"javascript";"program_languages";6;0,0576923
+"115";"N/A";"Germany";"matlab";"program_languages";6;0,0576923
+"116";"N/A";"Germany";"mssql";"databases";1;0,00961538
+"117";"N/A";"Germany";"pandas";"analysis_software";2;0,0192308
+"118";"N/A";"Germany";"php";"program_languages";2;0,0192308
+"119";"N/A";"Germany";"pig";"bigdata_tool";1;0,00961538
+"120";"N/A";"Germany";"powerpoint";"analysis_software";1;0,00961538
+"121";"N/A";"Germany";"python";"program_languages";49;0,471154
+"122";"N/A";"Germany";"r";"program_languages";48;0,461538
+"123";"N/A";"Germany";"ruby";"program_languages";3;0,0288462
+"124";"N/A";"Germany";"saas";"analysis_software";1;0,00961538
+"125";"N/A";"Germany";"sas";"analysis_software";13;0,125
+"126";"N/A";"Germany";"scala";"program_languages";10;0,0961538
+"127";"N/A";"Germany";"spark";"bigdata_tool";21;0,201923
+"128";"N/A";"Germany";"splunk";"analysis_software";3;0,0288462
+"129";"N/A";"Germany";"spss";"analysis_software";13;0,125
+"130";"N/A";"Germany";"sql";"databases";39;0,375
+"131";"N/A";"Germany";"tableau";"analysis_software";11;0,105769
+"132";"N/A";"India";"bash";"program_languages";1;0,0104167
+"133";"N/A";"India";"c++";"program_languages";9;0,09375
+"134";"N/A";"India";"cassandra";"databases";10;0,104167
+"135";"N/A";"India";"d3";"analysis_software";7;0,0729167
+"136";"N/A";"India";"excel";"analysis_software";11;0,114583
+"137";"N/A";"India";"hadoop";"bigdata_tool";30;0,3125
+"138";"N/A";"India";"hbase";"databases";8;0,0833333
+"139";"N/A";"India";"hive";"bigdata_tool";13;0,135417
+"140";"N/A";"India";"java";"program_languages";33;0,34375
+"141";"N/A";"India";"javascript";"program_languages";6;0,0625
+"142";"N/A";"India";"mahout";"bigdata_tool";2;0,0208333
+"143";"N/A";"India";"mapreduce";"bigdata_tool";3;0,03125
+"144";"N/A";"India";"matlab";"program_languages";13;0,135417
+"145";"N/A";"India";"mongodb";"databases";2;0,0208333
+"146";"N/A";"India";"mysql";"databases";1;0,0104167
+"147";"N/A";"India";"nosql";"databases";3;0,03125
+"148";"N/A";"India";"numpy";"analysis_software";1;0,0104167
+"149";"N/A";"India";"oozie";"bigdata_tool";1;0,0104167
+"150";"N/A";"India";"pandas";"analysis_software";1;0,0104167
+"151";"N/A";"India";"perl";"program_languages";2;0,0208333
+"152";"N/A";"India";"php";"program_languages";6;0,0625
+"153";"N/A";"India";"pig";"bigdata_tool";10;0,104167
+"154";"N/A";"India";"powerpoint";"analysis_software";1;0,0104167
+"155";"N/A";"India";"python";"program_languages";55;0,572917
+"156";"N/A";"India";"r";"program_languages";53;0,552083
+"157";"N/A";"India";"rdbms";"databases";3;0,03125
+"158";"N/A";"India";"ruby";"program_languages";3;0,03125
+"159";"N/A";"India";"saas";"analysis_software";1;0,0104167
+"160";"N/A";"India";"sas";"analysis_software";21;0,21875
+"161";"N/A";"India";"scala";"program_languages";12;0,125
+"162";"N/A";"India";"spark";"bigdata_tool";22;0,229167
+"163";"N/A";"India";"spotfire";"analysis_software";1;0,0104167
+"164";"N/A";"India";"spss";"analysis_software";9;0,09375
+"165";"N/A";"India";"sql";"databases";41;0,427083
+"166";"N/A";"India";"tableau";"analysis_software";9;0,09375
+"167";"N/A";"South Africa";"c++";"program_languages";4;0,05
+"168";"N/A";"South Africa";"cassandra";"databases";1;0,0125
+"169";"N/A";"South Africa";"d3";"analysis_software";3;0,0375
+"170";"N/A";"South Africa";"excel";"analysis_software";17;0,2125
+"171";"N/A";"South Africa";"flume";"bigdata_tool";1;0,0125
+"172";"N/A";"South Africa";"hadoop";"bigdata_tool";12;0,15
+"173";"N/A";"South Africa";"hbase";"databases";2;0,025
+"174";"N/A";"South Africa";"hive";"bigdata_tool";5;0,0625
+"175";"N/A";"South Africa";"java";"program_languages";16;0,2
+"176";"N/A";"South Africa";"javascript";"program_languages";1;0,0125
+"177";"N/A";"South Africa";"mahout";"bigdata_tool";1;0,0125
+"178";"N/A";"South Africa";"matlab";"program_languages";2;0,025
+"179";"N/A";"South Africa";"mongodb";"databases";1;0,0125
+"180";"N/A";"South Africa";"oozie";"bigdata_tool";1;0,0125
+"181";"N/A";"South Africa";"perl";"program_languages";2;0,025
+"182";"N/A";"South Africa";"php";"program_languages";4;0,05
+"183";"N/A";"South Africa";"pig";"bigdata_tool";4;0,05
+"184";"N/A";"South Africa";"powerpoint";"analysis_software";2;0,025
+"185";"N/A";"South Africa";"python";"program_languages";24;0,3
+"186";"N/A";"South Africa";"r";"program_languages";40;0,5
+"187";"N/A";"South Africa";"rdbms";"databases";1;0,0125
+"188";"N/A";"South Africa";"ruby";"program_languages";2;0,025
+"189";"N/A";"South Africa";"sas";"analysis_software";12;0,15
+"190";"N/A";"South Africa";"scala";"program_languages";2;0,025
+"191";"N/A";"South Africa";"spark";"bigdata_tool";12;0,15
+"192";"N/A";"South Africa";"splunk";"analysis_software";1;0,0125
+"193";"N/A";"South Africa";"spss";"analysis_software";4;0,05
+"194";"N/A";"South Africa";"sql";"databases";28;0,35
+"195";"N/A";"South Africa";"tableau";"analysis_software";5;0,0625
+"196";"New York, New York";"US";"c++";"program_languages";16;0,105263
+"197";"New York, New York";"US";"cassandra";"databases";4;0,0263158
+"198";"New York, New York";"US";"d3";"analysis_software";4;0,0263158
+"199";"New York, New York";"US";"excel";"analysis_software";13;0,0855263
+"200";"New York, New York";"US";"flume";"bigdata_tool";4;0,0263158
+"201";"New York, New York";"US";"hadoop";"bigdata_tool";40;0,263158
+"202";"New York, New York";"US";"hbase";"databases";5;0,0328947
+"203";"New York, New York";"US";"hive";"bigdata_tool";28;0,184211
+"204";"New York, New York";"US";"java";"program_languages";49;0,322368
+"205";"New York, New York";"US";"javascript";"program_languages";4;0,0263158
+"206";"New York, New York";"US";"mahout";"bigdata_tool";4;0,0263158
+"207";"New York, New York";"US";"matlab";"program_languages";22;0,144737
+"208";"New York, New York";"US";"numpy";"analysis_software";1;0,00657895
+"209";"New York, New York";"US";"pandas";"analysis_software";2;0,0131579
+"210";"New York, New York";"US";"perl";"program_languages";2;0,0131579
+"211";"New York, New York";"US";"php";"program_languages";5;0,0328947
+"212";"New York, New York";"US";"pig";"bigdata_tool";17;0,111842
+"213";"New York, New York";"US";"powerpoint";"analysis_software";1;0,00657895
+"214";"New York, New York";"US";"python";"program_languages";72;0,473684
+"215";"New York, New York";"US";"r";"program_languages";67;0,440789
+"216";"New York, New York";"US";"rdbms";"databases";2;0,0131579
+"217";"New York, New York";"US";"ruby";"program_languages";13;0,0855263
+"218";"New York, New York";"US";"sas";"analysis_software";42;0,276316
+"219";"New York, New York";"US";"scala";"program_languages";15;0,0986842
+"220";"New York, New York";"US";"spark";"bigdata_tool";43;0,282895
+"221";"New York, New York";"US";"spotfire";"analysis_software";3;0,0197368
+"222";"New York, New York";"US";"spss";"analysis_software";7;0,0460526
+"223";"New York, New York";"US";"sql";"databases";49;0,322368
+"224";"New York, New York";"US";"tableau";"analysis_software";12;0,0789474
+"225";"New York, New York";"US";"zookeeper";"bigdata_tool";1;0,00657895
+"226";"Paris";"France";"bash";"program_languages";3;0,0294118
+"227";"Paris";"France";"c++";"program_languages";6;0,0588235
+"228";"Paris";"France";"cassandra";"databases";1;0,00980392
+"229";"Paris";"France";"d3";"analysis_software";5;0,0490196
+"230";"Paris";"France";"excel";"analysis_software";3;0,0294118
+"231";"Paris";"France";"hadoop";"bigdata_tool";19;0,186275
+"232";"Paris";"France";"hbase";"databases";1;0,00980392
+"233";"Paris";"France";"hive";"bigdata_tool";13;0,127451
+"234";"Paris";"France";"java";"program_languages";22;0,215686
+"235";"Paris";"France";"javascript";"program_languages";7;0,0686275
+"236";"Paris";"France";"mahout";"bigdata_tool";1;0,00980392
+"237";"Paris";"France";"matlab";"program_languages";7;0,0686275
+"238";"Paris";"France";"numpy";"analysis_software";1;0,00980392
+"239";"Paris";"France";"pandas";"analysis_software";1;0,00980392
+"240";"Paris";"France";"perl";"program_languages";2;0,0196078
+"241";"Paris";"France";"php";"program_languages";3;0,0294118
+"242";"Paris";"France";"pig";"bigdata_tool";9;0,0882353
+"243";"Paris";"France";"python";"program_languages";44;0,431373
+"244";"Paris";"France";"r";"program_languages";45;0,441176
+"245";"Paris";"France";"ruby";"program_languages";2;0,0196078
+"246";"Paris";"France";"sas";"analysis_software";17;0,166667
+"247";"Paris";"France";"scala";"program_languages";9;0,0882353
+"248";"Paris";"France";"spark";"bigdata_tool";19;0,186275
+"249";"Paris";"France";"spss";"analysis_software";5;0,0490196
+"250";"Paris";"France";"sql";"databases";26;0,254902
+"251";"Paris";"France";"tableau";"analysis_software";6;0,0588235
+"252";"Seattle, Washington";"US";"bash";"program_languages";1;0,00649351
+"253";"Seattle, Washington";"US";"c++";"program_languages";6;0,038961
+"254";"Seattle, Washington";"US";"d3";"analysis_software";4;0,025974
+"255";"Seattle, Washington";"US";"excel";"analysis_software";14;0,0909091
+"256";"Seattle, Washington";"US";"hadoop";"bigdata_tool";29;0,188312
+"257";"Seattle, Washington";"US";"hbase";"databases";1;0,00649351
+"258";"Seattle, Washington";"US";"hive";"bigdata_tool";6;0,038961
+"259";"Seattle, Washington";"US";"java";"program_languages";46;0,298701
+"260";"Seattle, Washington";"US";"javascript";"program_languages";2;0,012987
+"261";"Seattle, Washington";"US";"mahout";"bigdata_tool";1;0,00649351
+"262";"Seattle, Washington";"US";"mapreduce";"bigdata_tool";1;0,00649351
+"263";"Seattle, Washington";"US";"matlab";"program_languages";16;0,103896
+"264";"Seattle, Washington";"US";"mssql";"databases";1;0,00649351
+"265";"Seattle, Washington";"US";"numpy";"analysis_software";12;0,0779221
+"266";"Seattle, Washington";"US";"pandas";"analysis_software";14;0,0909091
+"267";"Seattle, Washington";"US";"perl";"program_languages";6;0,038961
+"268";"Seattle, Washington";"US";"php";"program_languages";3;0,0194805
+"269";"Seattle, Washington";"US";"pig";"bigdata_tool";7;0,0454545
+"270";"Seattle, Washington";"US";"python";"program_languages";64;0,415584
+"271";"Seattle, Washington";"US";"r";"program_languages";74;0,480519
+"272";"Seattle, Washington";"US";"ruby";"program_languages";14;0,0909091
+"273";"Seattle, Washington";"US";"saas";"analysis_software";1;0,00649351
+"274";"Seattle, Washington";"US";"sas";"analysis_software";19;0,123377
+"275";"Seattle, Washington";"US";"scala";"program_languages";17;0,11039
+"276";"Seattle, Washington";"US";"scipy";"analysis_software";11;0,0714286
+"277";"Seattle, Washington";"US";"spark";"bigdata_tool";33;0,214286
+"278";"Seattle, Washington";"US";"spss";"analysis_software";2;0,012987
+"279";"Seattle, Washington";"US";"sql";"databases";55;0,357143
+"280";"Seattle, Washington";"US";"tableau";"analysis_software";25;0,162338
+"281";"San Francisco, Calif";"US";"c++";"program_languages";19;0,123377
+"282";"San Francisco, Calif";"US";"cassandra";"databases";14;0,0909091
+"283";"San Francisco, Calif";"US";"d3";"analysis_software";4;0,025974
+"284";"San Francisco, Calif";"US";"excel";"analysis_software";16;0,103896
+"285";"San Francisco, Calif";"US";"hadoop";"bigdata_tool";35;0,227273
+"286";"San Francisco, Calif";"US";"hbase";"databases";14;0,0909091
+"287";"San Francisco, Calif";"US";"hive";"bigdata_tool";18;0,116883
+"288";"San Francisco, Calif";"US";"java";"program_languages";38;0,246753
+"289";"San Francisco, Calif";"US";"javascript";"program_languages";1;0,00649351
+"290";"San Francisco, Calif";"US";"mahout";"bigdata_tool";1;0,00649351
+"291";"San Francisco, Calif";"US";"matlab";"program_languages";10;0,0649351
+"292";"San Francisco, Calif";"US";"numpy";"analysis_software";1;0,00649351
+"293";"San Francisco, Calif";"US";"pandas";"analysis_software";1;0,00649351
+"294";"San Francisco, Calif";"US";"perl";"program_languages";3;0,0194805
+"295";"San Francisco, Calif";"US";"php";"program_languages";1;0,00649351
+"296";"San Francisco, Calif";"US";"pig";"bigdata_tool";14;0,0909091
+"297";"San Francisco, Calif";"US";"python";"program_languages";73;0,474026
+"298";"San Francisco, Calif";"US";"r";"program_languages";58;0,376623
+"299";"San Francisco, Calif";"US";"rdbms";"databases";2;0,012987
+"300";"San Francisco, Calif";"US";"ruby";"program_languages";4;0,025974
+"301";"San Francisco, Calif";"US";"saas";"analysis_software";2;0,012987
+"302";"San Francisco, Calif";"US";"sas";"analysis_software";20;0,12987
+"303";"San Francisco, Calif";"US";"scala";"program_languages";25;0,162338
+"304";"San Francisco, Calif";"US";"scipy";"analysis_software";1;0,00649351
+"305";"San Francisco, Calif";"US";"spark";"bigdata_tool";33;0,214286
+"306";"San Francisco, Calif";"US";"spotfire";"analysis_software";2;0,012987
+"307";"San Francisco, Calif";"US";"spss";"analysis_software";15;0,0974026
+"308";"San Francisco, Calif";"US";"sql";"databases";38;0,246753
+"309";"San Francisco, Calif";"US";"tableau";"analysis_software";9;0,0584416
+"310";"Sydney";"Australia";"bash";"program_languages";1;0,00980392
+"311";"Sydney";"Australia";"c++";"program_languages";5;0,0490196
+"312";"Sydney";"Australia";"cassandra";"databases";7;0,0686275
+"313";"Sydney";"Australia";"d3";"analysis_software";1;0,00980392
+"314";"Sydney";"Australia";"excel";"analysis_software";8;0,0784314
+"315";"Sydney";"Australia";"hadoop";"bigdata_tool";13;0,127451
+"316";"Sydney";"Australia";"hbase";"databases";1;0,00980392
+"317";"Sydney";"Australia";"hive";"bigdata_tool";4;0,0392157
+"318";"Sydney";"Australia";"java";"program_languages";19;0,186275
+"319";"Sydney";"Australia";"javascript";"program_languages";2;0,0196078
+"320";"Sydney";"Australia";"matlab";"program_languages";2;0,0196078
+"321";"Sydney";"Australia";"mysql";"databases";2;0,0196078
+"322";"Sydney";"Australia";"numpy";"analysis_software";2;0,0196078
+"323";"Sydney";"Australia";"pandas";"analysis_software";2;0,0196078
+"324";"Sydney";"Australia";"php";"program_languages";4;0,0392157
+"325";"Sydney";"Australia";"pig";"bigdata_tool";3;0,0294118
+"326";"Sydney";"Australia";"python";"program_languages";40;0,392157
+"327";"Sydney";"Australia";"r";"program_languages";44;0,431373
+"328";"Sydney";"Australia";"ruby";"program_languages";1;0,00980392
+"329";"Sydney";"Australia";"saas";"analysis_software";2;0,0196078
+"330";"Sydney";"Australia";"sas";"analysis_software";20;0,196078
+"331";"Sydney";"Australia";"scala";"program_languages";14;0,137255
+"332";"Sydney";"Australia";"spark";"bigdata_tool";16;0,156863
+"333";"Sydney";"Australia";"splunk";"analysis_software";1;0,00980392
+"334";"Sydney";"Australia";"spss";"analysis_software";2;0,0196078
+"335";"Sydney";"Australia";"sql";"databases";38;0,372549
+"336";"Sydney";"Australia";"tableau";"analysis_software";16;0,156863
+"337";"Toronto, Ontario";"Canada";"bash";"program_languages";1;0,00649351
+"338";"Toronto, Ontario";"Canada";"c++";"program_languages";8;0,0519481
+"339";"Toronto, Ontario";"Canada";"cassandra";"databases";8;0,0519481
+"340";"Toronto, Ontario";"Canada";"d3";"analysis_software";3;0,0194805
+"341";"Toronto, Ontario";"Canada";"excel";"analysis_software";7;0,0454545
+"342";"Toronto, Ontario";"Canada";"flume";"bigdata_tool";4;0,025974
+"343";"Toronto, Ontario";"Canada";"hadoop";"bigdata_tool";23;0,149351
+"344";"Toronto, Ontario";"Canada";"hbase";"databases";7;0,0454545
+"345";"Toronto, Ontario";"Canada";"hive";"bigdata_tool";13;0,0844156
+"346";"Toronto, Ontario";"Canada";"java";"program_languages";21;0,136364
+"347";"Toronto, Ontario";"Canada";"javascript";"program_languages";4;0,025974
+"348";"Toronto, Ontario";"Canada";"mahout";"bigdata_tool";1;0,00649351
+"349";"Toronto, Ontario";"Canada";"matlab";"program_languages";6;0,038961
+"350";"Toronto, Ontario";"Canada";"numpy";"analysis_software";1;0,00649351
+"351";"Toronto, Ontario";"Canada";"pandas";"analysis_software";2;0,012987
+"352";"Toronto, Ontario";"Canada";"perl";"program_languages";3;0,0194805
+"353";"Toronto, Ontario";"Canada";"pig";"bigdata_tool";8;0,0519481
+"354";"Toronto, Ontario";"Canada";"python";"program_languages";32;0,207792
+"355";"Toronto, Ontario";"Canada";"r";"program_languages";33;0,214286
+"356";"Toronto, Ontario";"Canada";"rdbms";"databases";4;0,025974
+"357";"Toronto, Ontario";"Canada";"ruby";"program_languages";2;0,012987
+"358";"Toronto, Ontario";"Canada";"sas";"analysis_software";13;0,0844156
+"359";"Toronto, Ontario";"Canada";"scala";"program_languages";20;0,12987
+"360";"Toronto, Ontario";"Canada";"spark";"bigdata_tool";25;0,162338
+"361";"Toronto, Ontario";"Canada";"spotfire";"analysis_software";1;0,00649351
+"362";"Toronto, Ontario";"Canada";"spss";"analysis_software";7;0,0454545
+"363";"Toronto, Ontario";"Canada";"sql";"databases";24;0,155844
+"364";"Toronto, Ontario";"Canada";"tableau";"analysis_software";9;0,0584416
+"365";"Austin, Texas";"US";"bash";"program_languages";5;0,0175439
+"366";"Austin, Texas";"US";"c++";"program_languages";33;0,115789
+"367";"Austin, Texas";"US";"cassandra";"databases";5;0,0175439
+"368";"Austin, Texas";"US";"d3";"analysis_software";24;0,0842105
+"369";"Austin, Texas";"US";"excel";"analysis_software";14;0,0491228
+"370";"Austin, Texas";"US";"hadoop";"bigdata_tool";25;0,0877193
+"371";"Austin, Texas";"US";"hbase";"databases";1;0,00350877
+"372";"Austin, Texas";"US";"hive";"bigdata_tool";12;0,0421053
+"373";"Austin, Texas";"US";"java";"program_languages";60;0,210526
+"374";"Austin, Texas";"US";"javascript";"program_languages";6;0,0210526
+"375";"Austin, Texas";"US";"mahout";"bigdata_tool";3;0,0105263
+"376";"Austin, Texas";"US";"matlab";"program_languages";19;0,0666667
+"377";"Austin, Texas";"US";"nosql";"databases";2;0,00701754
+"378";"Austin, Texas";"US";"numpy";"analysis_software";8;0,0280702
+"379";"Austin, Texas";"US";"pandas";"analysis_software";7;0,0245614
+"380";"Austin, Texas";"US";"perl";"program_languages";6;0,0210526
+"381";"Austin, Texas";"US";"php";"program_languages";30;0,105263
+"382";"Austin, Texas";"US";"pig";"bigdata_tool";2;0,00701754
+"383";"Austin, Texas";"US";"python";"program_languages";90;0,315789
+"384";"Austin, Texas";"US";"r";"program_languages";57;0,2
+"385";"Austin, Texas";"US";"rdbms";"databases";1;0,00350877
+"386";"Austin, Texas";"US";"ruby";"program_languages";5;0,0175439
+"387";"Austin, Texas";"US";"sas";"analysis_software";33;0,115789
+"388";"Austin, Texas";"US";"scala";"program_languages";3;0,0105263
+"389";"Austin, Texas";"US";"scipy";"analysis_software";4;0,0140351
+"390";"Austin, Texas";"US";"spark";"bigdata_tool";17;0,0596491
+"391";"Austin, Texas";"US";"splunk";"analysis_software";10;0,0350877
+"392";"Austin, Texas";"US";"spss";"analysis_software";5;0,0175439
+"393";"Austin, Texas";"US";"sql";"databases";54;0,189474
+"394";"Austin, Texas";"US";"tableau";"analysis_software";12;0,0421053
+"395";"Chicago, Illinois";"US";"bash";"program_languages";6;0,0075188
+"396";"Chicago, Illinois";"US";"c++";"program_languages";146;0,182957
+"397";"Chicago, Illinois";"US";"cassandra";"databases";12;0,0150376
+"398";"Chicago, Illinois";"US";"d3";"analysis_software";11;0,0137845
+"399";"Chicago, Illinois";"US";"excel";"analysis_software";142;0,177945
+"400";"Chicago, Illinois";"US";"flume";"bigdata_tool";4;0,00501253
+"401";"Chicago, Illinois";"US";"hadoop";"bigdata_tool";218;0,273183
+"402";"Chicago, Illinois";"US";"hbase";"databases";15;0,018797
+"403";"Chicago, Illinois";"US";"hive";"bigdata_tool";30;0,037594
+"404";"Chicago, Illinois";"US";"java";"program_languages";302;0,378446
+"405";"Chicago, Illinois";"US";"javascript";"program_languages";23;0,0288221
+"406";"Chicago, Illinois";"US";"mahout";"bigdata_tool";14;0,0175439
+"407";"Chicago, Illinois";"US";"mapreduce";"bigdata_tool";1;0,00125313
+"408";"Chicago, Illinois";"US";"matlab";"program_languages";111;0,139098
+"409";"Chicago, Illinois";"US";"mssql";"databases";1;0,00125313
+"410";"Chicago, Illinois";"US";"mysql";"databases";2;0,00250627
+"411";"Chicago, Illinois";"US";"nosql";"databases";1;0,00125313
+"412";"Chicago, Illinois";"US";"numpy";"analysis_software";21;0,0263158
+"413";"Chicago, Illinois";"US";"oozie";"bigdata_tool";6;0,0075188
+"414";"Chicago, Illinois";"US";"pandas";"analysis_software";29;0,0363409
+"415";"Chicago, Illinois";"US";"perl";"program_languages";134;0,16792
+"416";"Chicago, Illinois";"US";"php";"program_languages";10;0,0125313
+"417";"Chicago, Illinois";"US";"pig";"bigdata_tool";23;0,0288221
+"418";"Chicago, Illinois";"US";"powerpoint";"analysis_software";3;0,0037594
+"419";"Chicago, Illinois";"US";"python";"program_languages";308;0,385965
+"420";"Chicago, Illinois";"US";"r";"program_languages";301;0,377193
+"421";"Chicago, Illinois";"US";"rdbms";"databases";7;0,00877193
+"422";"Chicago, Illinois";"US";"ruby";"program_languages";30;0,037594
+"423";"Chicago, Illinois";"US";"saas";"analysis_software";1;0,00125313
+"424";"Chicago, Illinois";"US";"sas";"analysis_software";222;0,278196
+"425";"Chicago, Illinois";"US";"scala";"program_languages";11;0,0137845
+"426";"Chicago, Illinois";"US";"scipy";"analysis_software";21;0,0263158
+"427";"Chicago, Illinois";"US";"shark";"bigdata_tool";1;0,00125313
+"428";"Chicago, Illinois";"US";"spark";"bigdata_tool";41;0,0513784
+"429";"Chicago, Illinois";"US";"splunk";"analysis_software";6;0,0075188
+"430";"Chicago, Illinois";"US";"spotfire";"analysis_software";3;0,0037594
+"431";"Chicago, Illinois";"US";"spss";"analysis_software";145;0,181704
+"432";"Chicago, Illinois";"US";"sql";"databases";163;0,204261
+"433";"Chicago, Illinois";"US";"tableau";"analysis_software";28;0,0350877
+"434";"Chicago, Illinois";"US";"zookeeper";"bigdata_tool";3;0,0037594
+"435";"Detroit, Michigan";"US";"c++";"program_languages";16;0,0446927
+"436";"Detroit, Michigan";"US";"d3";"analysis_software";2;0,00558659
+"437";"Detroit, Michigan";"US";"excel";"analysis_software";92;0,256983
+"438";"Detroit, Michigan";"US";"hadoop";"bigdata_tool";86;0,240223
+"439";"Detroit, Michigan";"US";"hive";"bigdata_tool";42;0,117318
+"440";"Detroit, Michigan";"US";"java";"program_languages";39;0,108939
+"441";"Detroit, Michigan";"US";"javascript";"program_languages";2;0,00558659
+"442";"Detroit, Michigan";"US";"mahout";"bigdata_tool";9;0,0251397
+"443";"Detroit, Michigan";"US";"matlab";"program_languages";102;0,284916
+"444";"Detroit, Michigan";"US";"perl";"program_languages";26;0,0726257
+"445";"Detroit, Michigan";"US";"php";"program_languages";2;0,00558659
+"446";"Detroit, Michigan";"US";"pig";"bigdata_tool";45;0,125698
+"447";"Detroit, Michigan";"US";"powerpoint";"analysis_software";1;0,0027933
+"448";"Detroit, Michigan";"US";"python";"program_languages";73;0,203911
+"449";"Detroit, Michigan";"US";"r";"program_languages";140;0,391061
+"450";"Detroit, Michigan";"US";"rdbms";"databases";28;0,0782123
+"451";"Detroit, Michigan";"US";"ruby";"program_languages";2;0,00558659
+"452";"Detroit, Michigan";"US";"sas";"analysis_software";109;0,304469
+"453";"Detroit, Michigan";"US";"scala";"program_languages";2;0,00558659
+"454";"Detroit, Michigan";"US";"shark";"bigdata_tool";3;0,00837989
+"455";"Detroit, Michigan";"US";"spark";"bigdata_tool";36;0,100559
+"456";"Detroit, Michigan";"US";"sql";"databases";151;0,421788
+"457";"Detroit, Michigan";"US";"tableau";"analysis_software";41;0,114525
+"458";"New York, New York";"US";"bash";"program_languages";9;0,0027582
+"459";"New York, New York";"US";"c++";"program_languages";681;0,208704
+"460";"New York, New York";"US";"cassandra";"databases";11;0,00337113
+"461";"New York, New York";"US";"d3";"analysis_software";52;0,0159363
+"462";"New York, New York";"US";"excel";"analysis_software";980;0,300337
+"463";"New York, New York";"US";"flume";"bigdata_tool";3;0,000919399
+"464";"New York, New York";"US";"hadoop";"bigdata_tool";520;0,159363
+"465";"New York, New York";"US";"hbase";"databases";28;0,00858106
+"466";"New York, New York";"US";"hive";"bigdata_tool";158;0,0484217
+"467";"New York, New York";"US";"java";"program_languages";637;0,195219
+"468";"New York, New York";"US";"javascript";"program_languages";97;0,0297272
+"469";"New York, New York";"US";"mahout";"bigdata_tool";5;0,00153233
+"470";"New York, New York";"US";"mapreduce";"bigdata_tool";2;0,000612933
+"471";"New York, New York";"US";"matlab";"program_languages";107;0,0327919
+"472";"New York, New York";"US";"mssql";"databases";1;0,000306466
+"473";"New York, New York";"US";"numpy";"analysis_software";9;0,0027582
+"474";"New York, New York";"US";"oozie";"bigdata_tool";2;0,000612933
+"475";"New York, New York";"US";"pandas";"analysis_software";25;0,00766166
+"476";"New York, New York";"US";"perl";"program_languages";324;0,0992951
+"477";"New York, New York";"US";"php";"program_languages";108;0,0330984
+"478";"New York, New York";"US";"pig";"bigdata_tool";49;0,0150169
+"479";"New York, New York";"US";"powerpoint";"analysis_software";69;0,0211462
+"480";"New York, New York";"US";"python";"program_languages";982;0,30095
+"481";"New York, New York";"US";"r";"program_languages";1121;0,343549
+"482";"New York, New York";"US";"rdbms";"databases";4;0,00122587
+"483";"New York, New York";"US";"ruby";"program_languages";63;0,0193074
+"484";"New York, New York";"US";"sas";"analysis_software";262;0,0802942
+"485";"New York, New York";"US";"scala";"program_languages";112;0,0343242
+"486";"New York, New York";"US";"scipy";"analysis_software";9;0,0027582
+"487";"New York, New York";"US";"shark";"bigdata_tool";4;0,00122587
+"488";"New York, New York";"US";"spark";"bigdata_tool";138;0,0422924
+"489";"New York, New York";"US";"splunk";"analysis_software";17;0,00520993
+"490";"New York, New York";"US";"spotfire";"analysis_software";225;0,068955
+"491";"New York, New York";"US";"spss";"analysis_software";85;0,0260496
+"492";"New York, New York";"US";"sql";"databases";841;0,257738
+"493";"New York, New York";"US";"tableau";"analysis_software";53;0,0162427
+"494";"New York, New York";"US";"zookeeper";"bigdata_tool";1;0,000306466
+"495";"San Francisco, Calif";"US";"bash";"program_languages";186;0,0631365
+"496";"San Francisco, Calif";"US";"c++";"program_languages";319;0,108282
+"497";"San Francisco, Calif";"US";"cassandra";"databases";32;0,0108622
+"498";"San Francisco, Calif";"US";"d3";"analysis_software";37;0,0125594
+"499";"San Francisco, Calif";"US";"excel";"analysis_software";172;0,0583843
+"500";"San Francisco, Calif";"US";"hadoop";"bigdata_tool";1047;0,355397
+"501";"San Francisco, Calif";"US";"hbase";"databases";35;0,0118805
+"502";"San Francisco, Calif";"US";"hive";"bigdata_tool";725;0,246096
+"503";"San Francisco, Calif";"US";"java";"program_languages";933;0,316701
+"504";"San Francisco, Calif";"US";"javascript";"program_languages";81;0,0274949
+"505";"San Francisco, Calif";"US";"mahout";"bigdata_tool";11;0,00373388
+"506";"San Francisco, Calif";"US";"mapreduce";"bigdata_tool";2;0,000678887
+"507";"San Francisco, Calif";"US";"matlab";"program_languages";150;0,0509165
+"508";"San Francisco, Calif";"US";"mssql";"databases";4;0,00135777
+"509";"San Francisco, Calif";"US";"nosql";"databases";2;0,000678887
+"510";"San Francisco, Calif";"US";"numpy";"analysis_software";9;0,00305499
+"511";"San Francisco, Calif";"US";"oozie";"bigdata_tool";5;0,00169722
+"512";"San Francisco, Calif";"US";"pandas";"analysis_software";197;0,0668703
+"513";"San Francisco, Calif";"US";"perl";"program_languages";236;0,0801086
+"514";"San Francisco, Calif";"US";"php";"program_languages";46;0,0156144
+"515";"San Francisco, Calif";"US";"pig";"bigdata_tool";457;0,155126
+"516";"San Francisco, Calif";"US";"postgresql";"databases";2;0,000678887
+"517";"San Francisco, Calif";"US";"powerpoint";"analysis_software";5;0,00169722
+"518";"San Francisco, Calif";"US";"python";"program_languages";1249;0,423965
+"519";"San Francisco, Calif";"US";"r";"program_languages";1229;0,417176
+"520";"San Francisco, Calif";"US";"rdbms";"databases";21;0,00712831
+"521";"San Francisco, Calif";"US";"ruby";"program_languages";101;0,0342838
+"522";"San Francisco, Calif";"US";"saas";"analysis_software";2;0,000678887
+"523";"San Francisco, Calif";"US";"sas";"analysis_software";349;0,118466
+"524";"San Francisco, Calif";"US";"scala";"program_languages";252;0,0855397
+"525";"San Francisco, Calif";"US";"scipy";"analysis_software";7;0,0023761
+"526";"San Francisco, Calif";"US";"shark";"bigdata_tool";172;0,0583843
+"527";"San Francisco, Calif";"US";"spark";"bigdata_tool";560;0,190088
+"528";"San Francisco, Calif";"US";"splunk";"analysis_software";192;0,0651731
+"529";"San Francisco, Calif";"US";"spotfire";"analysis_software";10;0,00339443
+"530";"San Francisco, Calif";"US";"sps";"analysis_software";4;0,00135777
+"531";"San Francisco, Calif";"US";"spss";"analysis_software";83;0,0281738
+"532";"San Francisco, Calif";"US";"sql";"databases";958;0,325187
+"533";"San Francisco, Calif";"US";"tableau";"analysis_software";251;0,0852003
+"534";"San Francisco, Calif";"US";"zookeeper";"bigdata_tool";2;0,000678887
+"535";"Seattle, Washington";"US";"bash";"program_languages";3;0,00181378
+"536";"Seattle, Washington";"US";"c++";"program_languages";121;0,073156
+"537";"Seattle, Washington";"US";"cassandra";"databases";25;0,0151149
+"538";"Seattle, Washington";"US";"d3";"analysis_software";28;0,0169287
+"539";"Seattle, Washington";"US";"excel";"analysis_software";124;0,0749698
+"540";"Seattle, Washington";"US";"hadoop";"bigdata_tool";170;0,102781
+"541";"Seattle, Washington";"US";"hbase";"databases";11;0,00665054
+"542";"Seattle, Washington";"US";"hive";"bigdata_tool";142;0,0858525
+"543";"Seattle, Washington";"US";"java";"program_languages";424;0,256348
+"544";"Seattle, Washington";"US";"javascript";"program_languages";96;0,0580411
+"545";"Seattle, Washington";"US";"mahout";"bigdata_tool";19;0,0114873
+"546";"Seattle, Washington";"US";"mapreduce";"bigdata_tool";3;0,00181378
+"547";"Seattle, Washington";"US";"matlab";"program_languages";59;0,0356711
+"548";"Seattle, Washington";"US";"mssql";"databases";1;0,000604595
+"549";"Seattle, Washington";"US";"numpy";"analysis_software";5;0,00302297
+"550";"Seattle, Washington";"US";"pandas";"analysis_software";5;0,00302297
+"551";"Seattle, Washington";"US";"perl";"program_languages";90;0,0544135
+"552";"Seattle, Washington";"US";"php";"program_languages";95;0,0574365
+"553";"Seattle, Washington";"US";"pig";"bigdata_tool";57;0,0344619
+"554";"Seattle, Washington";"US";"powerpoint";"analysis_software";9;0,00544135
+"555";"Seattle, Washington";"US";"python";"program_languages";384;0,232164
+"556";"Seattle, Washington";"US";"r";"program_languages";431;0,26058
+"557";"Seattle, Washington";"US";"rdbms";"databases";4;0,00241838
+"558";"Seattle, Washington";"US";"ruby";"program_languages";110;0,0665054
+"559";"Seattle, Washington";"US";"saas";"analysis_software";4;0,00241838
+"560";"Seattle, Washington";"US";"sas";"analysis_software";168;0,101572
+"561";"Seattle, Washington";"US";"scala";"program_languages";38;0,0229746
+"562";"Seattle, Washington";"US";"scipy";"analysis_software";5;0,00302297
+"563";"Seattle, Washington";"US";"spark";"bigdata_tool";211;0,12757
+"564";"Seattle, Washington";"US";"splunk";"analysis_software";4;0,00241838
+"565";"Seattle, Washington";"US";"spotfire";"analysis_software";1;0,000604595
+"566";"Seattle, Washington";"US";"spss";"analysis_software";102;0,0616687
+"567";"Seattle, Washington";"US";"sql";"databases";268;0,162031
+"568";"Seattle, Washington";"US";"tableau";"analysis_software";56;0,0338573
+"569";"Seattle, Washington";"US";"zookeeper";"bigdata_tool";2;0,00120919
