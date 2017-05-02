@@ -1,0 +1,98 @@
+---
+title: "Week 13 Data 607"
+author: "Michael Muller"
+date: "May 1, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(RMySQL)
+library(knitr)
+library(RNeo4j)
+```
+
+## Task : Migrate relational database to graph database  
+## My process : 
+### 1 . Connect to relational database
+### 2 . Export tables
+### 3 . Import tables, creating categories as nodes, and observations as relationships.
+
+```{R}
+
+con <- dbConnect(RMySQL::MySQL(),
+                 dbname = "datascienceskills",
+                 host = "35.185.104.222",
+                 port = 3306,
+                 user = "root",
+                 password = "data607pw")
+
+all_data <- dbGetQuery(con, "SELECT Location.Description, Location.Country, Skills.SkillDescription, Categories.Description, skillsdata.Amount, skillsdata.Rating
+        FROM skillsdata LEFT JOIN (Skills LEFT JOIN Categories ON Skills.SkillCategory = Categories.CategoryID, Location)
+        ON (Skills.SkillID = skillsdata.Skill AND Location.LocationID = skillsdata.Place);")
+
+
+
+Location = dbGetQuery(con, 'SELECT * FROM Location')
+Skillsdata = dbGetQuery(con, 'SELECT * FROM skillsdata')
+Skills = dbGetQuery(con, 'SELECT * FROM Skills')
+Categories = dbGetQuery(con, 'SELECT * FROM Categories')
+
+write.csv2(Location,'location.csv',row.names = FALSE)
+write.csv2(Skillsdata, 'SkillsData.csv',row.names = FALSE)
+write.csv2(Skills,'Skills.csv',row.names = FALSE)
+write.csv2(Categories, 'Categories.csv', row.names = FALSE)
+dbDisconnect(con)
+
+
+```
+
+```{r}
+
+```
+
+```{r}
+neoGraph = startGraph('http://localhost:7474/db/data/',username = 'shrek', password ='shrekthemovie'  )
+clear(neoGraph, input = FALSE)
+
+#trans_action = newTransaction(neoGraph)
+addConstraint(neoGraph, "Location", "LocationID")
+addConstraint(neoGraph, "Category", "Description")
+addConstraint(neoGraph, "SkillDescription", "SkillID")
+
+
+
+
+cypher(neoGraph,'LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/parastyle/DATA607/master/Categories.csv" AS ROW FIELDTERMINATOR ";"
+       CREATE (n:Category)
+       SET n = ROW')
+
+
+cypher(neoGraph,'LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/parastyle/DATA607/master/location.csv" AS ROW FIELDTERMINATOR ";"
+       CREATE (n:Location)
+       SET n = ROW')
+
+cypher(neoGraph,'LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/parastyle/DATA607/master/Skills.csv" AS ROW FIELDTERMINATOR ";" 
+       CREATE (n:SkillDescription)
+       SET n = ROW')
+
+cypher(neoGraph,'MATCH (s:SkillDescription),(c:Category)
+       WHERE s.SkillCategory = c.CategoryID
+       CREATE (c)-[:Demands]->(s)')
+
+cypher(neoGraph,'LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/parastyle/DATA607/master/SkillsData.csv" AS ROW FIELDTERMINATOR ";" 
+       MATCH (s:SkillDescription),(l:Location)
+       WHERE ROW.Place = l.LocationID
+       CREATE (s)-[:is_demanded_by]->(l)')
+
+
+
+
+
+```
+
+![](C:/Users/Exped/Documents/nodes.PNG)
+
+#### Relational databases definitely have alot more structure than NoSQL databases from my experience dissecting both. Doing some reading, it looks like noSQL sacrifices ACID compliance for partition tolerance and load distribution. I recommend NoSQL over SQL.
